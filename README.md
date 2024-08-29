@@ -1,11 +1,7 @@
 # VMINet:A Separable Self-attention Inspired by State Space Model in Computer Vision
 
 ## Abstract
-
-  Mamba is an efficient State Space Model (SSM) with linear computational complexity. Although SSMs are not suitable for handling non-causal data, Vision Mamba (ViM) methods still demonstrate good performance in tasks such as image classification and object detection.
-Recent studies have shown that there is a rich theoretical connection between state space models and attention variants. We propose a novel separable self-attention method, for the first time introducing some excellent design concepts of Mamba into separable self-attention.
-To ensure a fair comparison with ViMs, we introduce VMINet, a simple yet powerful prototype architecture, constructed solely by stacking our novel attention modules with the most basic down-sampling layers. Notably, VMINet differs significantly from the conventional 
-Transformer architecture. Our experiments demonstrate that VMINet has achieved competitive results on image classification and high-resolution dense prediction tasks.
+Mamba is an efficient State Space Model (SSM) with linear computational complexity. Although SSMs are not suitable for handling non-causal data, Vision Mamba (ViM) methods still demonstrate good performance in tasks such as image classification and object detection. Recent studies have shown that there is a rich theoretical connection between state space models and attention variants. We propose a novel separable self-attention method, for the first time introducing some excellent design concepts of Mamba into separable self-attention. To ensure a fair comparison with ViMs, we introduce VMINet, a simple yet powerful prototype architecture, constructed solely by stacking our novel attention modules with the most basic down-sampling layers. Notably, VMINet differs significantly from the conventional Transformer architecture. Our experiments demonstrate that VMINet has achieved competitive results on image classification and high-resolution dense prediction tasks.
 
 ## ImageNet classification
 ### 1. Requirements
