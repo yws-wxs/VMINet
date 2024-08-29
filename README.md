@@ -22,7 +22,7 @@ python3 -m torch.distributed.launch --nproc_per_node=3 train_imagenet.py --data 
 |VMINet-B|80.9|  |  |
 
 ## Acknowledgement
-The development of this project referenced the source code of StarNet (https://github.com/ma-xu/Rewrite-the-Stars/tree/main/imagenet), thanks to this excellent work.
+The development of this project referenced the source code of [StarNet](https://github.com/ma-xu/Rewrite-the-Stars/tree/main/imagenet), thanks to this excellent work.
 
 ## License
 The majority of Rewrite the Stars is licensed under an [Apache License 2.0](https://github.com/ma-xu/Rewrite-the-Stars/blob/main/LICENSE)
