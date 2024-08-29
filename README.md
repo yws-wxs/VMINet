@@ -12,8 +12,8 @@ Transformer architecture. Our experiments demonstrate that VMINet has achieved c
 torch>=1.7.0; torchvision>=0.8.0; pyyaml; timm==0.6.13; einops; fvcore; h5py;
 
 ### 2.Train VMINet
-python3 -m torch.distributed.launch --nproc_per_node=3 train_imagenet.py --data {path-to-imagenet} --model {starnet-variants} -b 256 --lr 1e-3 --weight-decay 0.025 --aa rand-m1-mstd0.5-inc1 --cutmix 0.2 --color-jitter 0. --drop-path 0.
-
+```python3 -m torch.distributed.launch --nproc_per_node=3 train_imagenet.py --data {path-to-imagenet} --model {starnet-variants} -b 256 --lr 1e-3 --weight-decay 0.025 --aa rand-m1-mstd0.5-inc1 --cutmix 0.2 --color-jitter 0. --drop-path 0.
+```
 ### 3. Pretrained checkpoints
 |Model|Top1|Ckpt|logs|
 |:-----:|:----:|:----:|:----:|
