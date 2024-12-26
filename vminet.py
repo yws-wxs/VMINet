@@ -20,22 +20,24 @@ class ConvBN(torch.nn.Sequential):
 class Block(nn.Module):
     def __init__(self, dim, mlp_ratio=3, drop_path=0., size=56):
         super().__init__()
-        self.dwconv = ConvBN(dim, dim, 7, 1, (7 - 1) // 2, groups=dim, with_bn=True)
+        self.conv = ConvBN(dim, dim, 7, 1, (7 - 1) // 2, groups=dim, with_bn=True)
         self.f1 = ConvBN(dim, mlp_ratio * dim, 1, with_bn=False)
         self.f2 = ConvBN(dim, mlp_ratio * dim, 1, with_bn=False)
         self.sum = nn.Linear(size * size, 1, bias=False)
-        self.g = ConvBN(mlp_ratio * dim, dim, 1, with_bn=True)
+        self.g = ConvBN(mlp_ratio * dim, dim, 1, with_bn=False)
         self.stack = nn.Parameter(torch.ones(2))
         self.act = nn.ReLU6()
         self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
 
     def forward(self, x):
         input = x
-        x = self.dwconv(x)
+        x = self.conv(x)
         x1, x2 = self.f1(x), self.f2(x)
         x = self.act(x1) * x2
         B,C,H,W = x.size()
-        s = self.sum(x.reshape(B,C,H*W)).unsqueeze(2) #B,C,1,1
+        tril = torch.tril(x.reshape(B,C,H*W).permute(0, 2, 1))  #B,H*W,C
+        tril = tril.permute(0, 2, 1) #B,C,H*W
+        s = self.sum(tril).unsqueeze(2) #B,C,1,1
         x = self.stack[0]*s.expand(B,C,H,W) + self.stack[1]*x
         x = self.g(self.act(x))
         x = input + self.drop_path(x)
