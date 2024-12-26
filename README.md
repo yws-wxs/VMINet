@@ -14,10 +14,11 @@ python3 -m torch.distributed.launch --nproc_per_node=3 train_imagenet.py --data 
 ### 3. Pretrained checkpoints
 |Model|Top1|Ckpt|logs|
 |:-----:|:----:|:----:|:----:|
+|VMINet-Ti|70.7|||
 |VMINet-XS|78.6| [ckpt](https://github.com/yws-wxs/VMINet/releases/download/output/XS-ckpt.pth.tar) | [log](https://github.com/yws-wxs/VMINet/releases/download/output/XS-log.csv) |
 |VMINet-S|80.2|[ckpt](https://github.com/yws-wxs/VMINet/releases/download/output/S-ckpt.pth.tar)  |  [log](https://github.com/yws-wxs/VMINet/releases/download/output/S-log.csv)|
 |VMINet-B|retraining|||
-|VMINet-Ti|70.7|||
+
 
 ## Acknowledgement
 The development of this project referenced the source code of [StarNet](https://github.com/ma-xu/Rewrite-the-Stars/tree/main/imagenet), thanks to this excellent work.
