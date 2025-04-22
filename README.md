@@ -17,7 +17,7 @@ python3 -m torch.distributed.launch --nproc_per_node=3 train_imagenet.py --data 
 |VMINet-Ti|70.7| [ckpt](https://github.com/yws-wxs/VMINet/releases/download/output/VMINet2.0-Ti-checkpoint.pth.tar) | [log](https://github.com/yws-wxs/VMINet/releases/download/output/VMINet2.0-Ti-summary.csv) |
 |VMINet-XS|78.6| [ckpt](https://github.com/yws-wxs/VMINet/releases/download/output/VMINet2.0-XS-checkpoint.pth.tar) | [log](https://github.com/yws-wxs/VMINet/releases/download/output/VMINet2.0-XS-summary.csv) |
 |VMINet-S|80.5|[ckpt](https://github.com/yws-wxs/VMINet/releases/download/output/VMINet2.0-S-checkpoint.pth.tar)  |  [log](https://github.com/yws-wxs/VMINet/releases/download/output/VMINet2.0-S-summary.csv)|
-|VMINet-B|retraining|||
+|VMINet-B|82.4||[ckpt](https://github.com/yws-wxs/VMINet/releases/download/4.22/B-ckpt.pth.tar)  |  [log](https://github.com/yws-wxs/VMINet/releases/download/4.22/B-log.csv)|
 
 
 ## Acknowledgement
